@@ -23,7 +23,12 @@ async function startServer() {
   const PORT = 3000;
 
   // Standard middleware configuration
-  app.use(cors());
+  app.use(cors({
+    origin: [
+      "http://localhost:5173",
+      "https://your-frontend-name.onrender.com"
+    ]
+  }));
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
