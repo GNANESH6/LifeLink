@@ -14,7 +14,7 @@ export default defineConfig(() => {
     server: {
       proxy: {
         '/api': {
-          target: 'https://life-link-m078.onrender.com',
+          target: 'https://lifelink-9d9s.onrender.com',
           changeOrigin: true,
           secure: true,
         }

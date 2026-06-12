@@ -7,11 +7,11 @@
  */
 
 export const API_BASE =
-  (import.meta as any).env?.VITE_API_URL ?? "https://life-link-m078.onrender.com";
+  (import.meta as any).env?.VITE_API_URL ?? "https://lifelink-9d9s.onrender.com";
 
 /**
  * Convenience helper — prepends API_BASE to a path.
- * Usage: apiUrl("/auth/login")  →  "https://life-link-m078.onrender.com/api/auth/login"
+ * Usage: apiUrl("/auth/login")  →  "https://lifelink-9d9s.onrender.com/api/auth/login"
  */
 export function apiUrl(path: string): string {
   // Ensure path starts with /api
