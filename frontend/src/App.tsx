@@ -283,11 +283,11 @@ function LifeLinkApp() {
           </nav>
 
           {/* User Sign In Controls */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Accessibility Theme Toggle Option */}
             <button
               onClick={toggleTheme}
-              className="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-all cursor-pointer font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800 shadow-sm"
+              className="p-1.5 sm:p-2 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-all cursor-pointer font-bold flex items-center justify-center border border-slate-200 dark:border-slate-800 shadow-sm"
               aria-label="Toggle Theme Mode"
               id="theme-toggle-btn"
             >
@@ -326,10 +326,10 @@ function LifeLinkApp() {
                 </button>
               </div>
             ) : (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2">
                 <button
                   onClick={() => handleNavigate("login")}
-                  className="px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-xl transition-all cursor-pointer"
+                  className="px-3 sm:px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap"
                   id="header-login-btn"
                 >
                   Log In
@@ -337,10 +337,11 @@ function LifeLinkApp() {
                 
                 <button
                   onClick={() => handleNavigate("register")}
-                  className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold rounded-xl shadow-md shadow-red-500/15 active:scale-95 transition-all cursor-pointer"
+                  className="px-3 sm:px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold rounded-xl shadow-md shadow-red-500/15 active:scale-95 transition-all cursor-pointer whitespace-nowrap"
                   id="header-register-btn"
                 >
-                  Register Donor
+                  <span className="sm:hidden">Register</span>
+                  <span className="hidden sm:inline">Register Donor</span>
                 </button>
               </div>
             )}

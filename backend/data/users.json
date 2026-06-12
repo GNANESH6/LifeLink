@@ -1,0 +1,23 @@
+[
+  {
+    "id": "u-1781268515782-535",
+    "name": "Sangati Gnaneshwarreddy",
+    "email": "sangatignaneshwarreddy2006@gmail.com",
+    "password": "$2b$10$nhnOgb.0pcaTbyVOgzcnIOqPI6YlShQCdP7Eval9Q21iOCCcD6oJ.",
+    "phone": "1231231231",
+    "age": 21,
+    "gender": "Male",
+    "bloodGroup": "O+",
+    "donorType": "Blood",
+    "address": "Anantapur, Anantapuram, Andhra Pradesh, 515001, India",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        77.6065039,
+        14.6783221
+      ]
+    },
+    "availability": "Available",
+    "createdAt": "2026-06-12T12:48:35.782Z"
+  }
+]
