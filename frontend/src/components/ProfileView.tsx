@@ -8,6 +8,7 @@ import { User, Phone, MapPin, Compass, ShieldCheck, Heart, Power, Save, Check, L
 import { useAuth } from "../context/AuthContext.js";
 import { DonorType, AvailabilityStatus } from "../types.js";
 import { motion, AnimatePresence } from "motion/react";
+import { apiUrl } from "../api.js";
 
 interface ProfileViewProps {
   addToast: (message: string, type: "success" | "error" | "info") => void;
@@ -33,7 +34,7 @@ export default function ProfileView({ addToast, onNavigate }: ProfileViewProps) 
     if (!token) return;
     setLoadingEmergencies(true);
     try {
-      const res = await fetch("/api/emergency", {
+      const res = await fetch(apiUrl("/emergency"), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -88,7 +89,7 @@ export default function ProfileView({ addToast, onNavigate }: ProfileViewProps) 
     const lng = user.location?.coordinates?.[0] || 0;
 
     try {
-      const res = await fetch("/api/emergency", {
+      const res = await fetch(apiUrl("/emergency"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -123,7 +124,7 @@ export default function ProfileView({ addToast, onNavigate }: ProfileViewProps) 
   const handleCloseEmergency = async (requestId: string) => {
     addToast("Resolving broadcast...", "info");
     try {
-      const res = await fetch(`/api/emergency/${requestId}`, {
+      const res = await fetch(apiUrl(`/emergency/${requestId}`), {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -229,7 +230,7 @@ export default function ProfileView({ addToast, onNavigate }: ProfileViewProps) 
 
         // Reverse geocode to text address
         try {
-          const res = await fetch("/api/location/reverse-geocode", {
+          const res = await fetch(apiUrl("/location/reverse-geocode"), {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ latitude: lat, longitude: lng }),
@@ -267,7 +268,7 @@ export default function ProfileView({ addToast, onNavigate }: ProfileViewProps) 
     addToast("Translating address to geo-coordinates point...", "info");
 
     try {
-      const res = await fetch("/api/location/geocode", {
+      const res = await fetch(apiUrl("/location/geocode"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ address }),

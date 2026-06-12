@@ -5,6 +5,7 @@
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { User, DonorType, AvailabilityStatus } from "../types.js";
+import { apiUrl } from "../api.js";
 
 interface AuthContextType {
   user: User | null;
@@ -73,7 +74,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const fetchCurrentUserProfile = async (authToken: string) => {
     try {
-      const res = await fetch("/api/auth/me", {
+      const res = await fetch(apiUrl("/auth/me"), {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },
@@ -99,7 +100,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/auth/login", {
+      const res = await fetch(apiUrl("/auth/login"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -127,7 +128,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/auth/google", {
+      const res = await fetch(apiUrl("/auth/google"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -155,7 +156,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/auth/register", {
+      const res = await fetch(apiUrl("/auth/register"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -184,7 +185,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/users/profile", {
+      const res = await fetch(apiUrl("/users/profile"), {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -9,7 +9,7 @@ export interface GeoLocation {
 }
 
 export type DonorType = "Blood";
-export type AvailabilityStatus = "Available" | "Not Available";
+export type AvailabilityStatus = "Available" | "Not Available" | "Emergency";
 
 export interface User {
   id: string; // Uniform ID for both MongoDB and Local JSON fallback

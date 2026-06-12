@@ -9,6 +9,7 @@ import { motion } from "motion/react";
 import BloodCompatibilityTable from "./BloodCompatibilityTable";
 import DonorFAQs from "./DonorFAQs";
 import { EmergencyRequest } from "../types.js";
+import { apiUrl } from "../api.js";
 
 interface HomeViewProps {
   onNavigate: (view: string) => void;
@@ -27,7 +28,7 @@ export default function HomeView({ onNavigate, isAuthenticated }: HomeViewProps)
 
   useEffect(() => {
     setLoadingEmergencies(true);
-    fetch("/api/emergency")
+    fetch(apiUrl("/emergency"))
       .then((res) => {
         if (res.ok) return res.json();
         throw new Error("Failed to fetch emergencies");
@@ -40,7 +41,7 @@ export default function HomeView({ onNavigate, isAuthenticated }: HomeViewProps)
   }, []);
 
   useEffect(() => {
-    fetch("/api/users/stats")
+    fetch(apiUrl("/users/stats"))
       .then((res) => {
         if (res.ok) return res.json();
         throw new Error("Statistics retrieval failed");

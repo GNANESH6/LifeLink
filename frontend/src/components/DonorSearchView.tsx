@@ -8,6 +8,7 @@ import { Search, MapPin, Phone, Heart, Grid, Filter, Map, Navigation2, Compass, 
 import { useAuth } from "../context/AuthContext.js";
 import { DonorMatch, EmergencyRequest } from "../types.js";
 import { motion, AnimatePresence } from "motion/react";
+import { apiUrl } from "../api.js";
 
 interface DonorSearchViewProps {
   onNavigate: (view: string) => void;
@@ -35,7 +36,7 @@ export default function DonorSearchView({ onNavigate, addToast }: DonorSearchVie
   const fetchEmergencies = async () => {
     setLoadingEmergencies(true);
     try {
-      const res = await fetch("/api/emergency");
+      const res = await fetch(apiUrl("/emergency"));
       if (res.ok) {
         const data = await res.json();
         setEmergencies(data || []);
@@ -90,7 +91,7 @@ export default function DonorSearchView({ onNavigate, addToast }: DonorSearchVie
         lng = 79.7400;
       }
 
-      const res = await fetch(`/api/location/blood-centers?latitude=${lat}&longitude=${lng}`, {
+      const res = await fetch(apiUrl(`/location/blood-centers?latitude=${lat}&longitude=${lng}`), {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -182,7 +183,7 @@ export default function DonorSearchView({ onNavigate, addToast }: DonorSearchVie
         params.append("radius", radius.toString());
       }
 
-      const response = await fetch(`/api/users/search?${params.toString()}`, {
+      const response = await fetch(apiUrl(`/users/search?${params.toString()}`), {
         headers: {
           Authorization: `Bearer ${token}`,
         },

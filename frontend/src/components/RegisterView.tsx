@@ -8,6 +8,7 @@ import { UserPlus, Compass, MapPin, User, Mail, Lock, Phone, Heart, Check } from
 import { useAuth } from "../context/AuthContext.js";
 import { DonorType } from "../types.js";
 import { motion } from "motion/react";
+import { apiUrl } from "../api.js";
 
 interface RegisterViewProps {
   onNavigate: (view: string) => void;
@@ -54,7 +55,7 @@ export default function RegisterView({ onNavigate, addToast }: RegisterViewProps
 
         // Try reverse geocoding to fill address automatically
         try {
-          const res = await fetch("/api/location/reverse-geocode", {
+          const res = await fetch(apiUrl("/location/reverse-geocode"), {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ latitude: lat, longitude: lng }),
@@ -92,7 +93,7 @@ export default function RegisterView({ onNavigate, addToast }: RegisterViewProps
     addToast("Geo-indexing entered address...", "info");
 
     try {
-      const res = await fetch("/api/location/geocode", {
+      const res = await fetch(apiUrl("/location/geocode"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ address }),
@@ -141,7 +142,7 @@ export default function RegisterView({ onNavigate, addToast }: RegisterViewProps
       setGeocoding(true);
       addToast("Auto geo-indexing your address location...", "info");
       try {
-        const res = await fetch("/api/location/geocode", {
+        const res = await fetch(apiUrl("/location/geocode"), {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ address }),
@@ -180,8 +181,8 @@ export default function RegisterView({ onNavigate, addToast }: RegisterViewProps
         bloodGroup,
         donorType,
         address,
-        latitude: latVal,
-        longitude: lngVal,
+        latitude: Number(latVal) || 0,
+        longitude: Number(lngVal) || 0,
       });
 
       if (success) {

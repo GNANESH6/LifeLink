@@ -9,6 +9,7 @@ import { useAuth } from "../context/AuthContext.js";
 import { DonorMatch, AvailabilityStatus, DonorType, EmergencyRequest } from "../types.js";
 import DonorMap from "./DonorMap.js";
 import { motion, AnimatePresence } from "motion/react";
+import { apiUrl } from "../api.js";
 
 interface DashboardViewProps {
   onNavigate: (view: string) => void;
@@ -86,7 +87,7 @@ export default function DashboardView({ onNavigate, addToast }: DashboardViewPro
     if (!token) return;
     setLoadingEmergencies(true);
     try {
-      const res = await fetch("/api/emergency", {
+      const res = await fetch(apiUrl("/emergency"), {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -149,7 +150,7 @@ export default function DashboardView({ onNavigate, addToast }: DashboardViewPro
     }
 
     try {
-      const res = await fetch("/api/emergency", {
+      const res = await fetch(apiUrl("/emergency"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -202,7 +203,7 @@ export default function DashboardView({ onNavigate, addToast }: DashboardViewPro
   const handleCloseEmergency = async (requestId: string) => {
     addToast("Resolving broadcast...", "info");
     try {
-      const res = await fetch(`/api/emergency/${requestId}`, {
+      const res = await fetch(apiUrl(`/emergency/${requestId}`), {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -289,7 +290,7 @@ export default function DashboardView({ onNavigate, addToast }: DashboardViewPro
 
     // Call standard geocoding
     try {
-      const res = await fetch("/api/location/geocode", {
+      const res = await fetch(apiUrl("/location/geocode"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -340,7 +341,7 @@ export default function DashboardView({ onNavigate, addToast }: DashboardViewPro
     // 3. If neither, but there is text in the search input box, let's geocode it inline first!
     else if (customLocationQuery.trim()) {
       try {
-        const res = await fetch("/api/location/geocode", {
+        const res = await fetch(apiUrl("/location/geocode"), {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -380,7 +381,7 @@ export default function DashboardView({ onNavigate, addToast }: DashboardViewPro
     }
 
     try {
-      const url = `/api/users/nearby?bloodGroup=${encodeURIComponent(bloodType)}&radius=${radius}&latitude=${lat}&longitude=${lng}`;
+      const url = apiUrl(`/users/nearby?bloodGroup=${encodeURIComponent(bloodType)}&radius=${radius}&latitude=${lat}&longitude=${lng}`);
       const response = await fetch(url, {
         headers: {
           Authorization: `Bearer ${token}`,
