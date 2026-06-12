@@ -838,7 +838,7 @@ export default function DashboardView({ onNavigate, addToast }: DashboardViewPro
 
             <button
               onClick={() => onNavigate("profile")}
-              className="w-full py-2.5 text-center text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl text-xs font-semibold transition-all cursor-pointer border border-slate-200"
+              className="w-full py-2.5 text-center text-white bg-red-600 hover:bg-red-700 rounded-xl text-xs font-semibold transition-all cursor-pointer border border-red-700 shadow-sm"
               id="dash-edit-profile-action"
             >
               Update Registration Address
