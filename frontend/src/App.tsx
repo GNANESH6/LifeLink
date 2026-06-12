@@ -47,13 +47,13 @@ function LifeLinkApp() {
   const [view, setView] = useState<string>("home");
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
 
-  // Simple toast notifier dispatch (permanently disabled per instructions)
   const addToast = (message: string, type: "success" | "error" | "info") => {
-    // No-op to keep UI pristine and free of toast indicators
+    const id = Math.random().toString(36).substr(2, 9);
+    setToasts((prev) => [...prev, { id, message, type }]);
   };
 
   const removeToast = (id: string) => {
-    // No-op
+    setToasts((prev) => prev.filter((toast) => toast.id !== id));
   };
 
   const handleLogoutClick = () => {
