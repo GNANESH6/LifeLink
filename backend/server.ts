@@ -26,7 +26,7 @@ async function startServer() {
   app.use(cors({
     origin: [
       "http://localhost:5173",
-      "https://your-frontend-name.onrender.com"
+      "https://lifelink-w2d7.onrender.com"
     ]
   }));
   app.use(express.json());
