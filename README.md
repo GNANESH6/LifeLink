@@ -4,7 +4,7 @@ LifeLink is a full-stack, modern web application designed to connect blood donor
 
 ## Features
 
-- **Geospatial Donor Search:** Find nearby blood donors using accurate distance calculations (Haversine formula).
+- **Geospatial Donor Search:** Find nearby blood donors using accurate distance calculations.
 - **Emergency Requests:** Broadcast and manage urgent blood requirements based on location and blood type.
 - **Secure Authentication:** User registration and login utilizing robust JWT (JSON Web Tokens) and bcrypt password hashing, alongside Google Single Sign-On (SSO).
 - **Profile Management:** Users can manage their personal details, blood group, donor type, and real-time availability status.
