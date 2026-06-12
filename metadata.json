@@ -1,0 +1,6 @@
+{
+  "name": "LifeLink",
+  "description": "Real-time blood & organ donor geo-matcher locating nearby donors on an interactive map.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

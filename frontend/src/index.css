@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Leaflet layout customization */
+.leaflet-container {
+  font-family: "Inter", sans-serif;
+  z-index: 10;
+  border-radius: 0.75rem;
+}
+
+/* custom animations */
+@keyframes pulse-ring {
+  0% { transform: scale(0.33); }
+  80%, 100% { opacity: 0; }
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1); }
+  100% { transform: scale(0.8); }
+}
+
+.custom-pulse-ring {
+  animation: pulse-ring 1.25s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+}
+
+.custom-pulse-dot {
+  animation: pulse-dot 1.25s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
+}
+
+/* Polished Global Premium Light Theme Enhancements */
+#lifelink-app-container {
+  background: radial-gradient(circle at 10% 20%, rgba(254, 242, 242, 0.45) 0%, rgba(248, 250, 252, 1) 90%);
+}
+
+.dark #lifelink-app-container {
+  background: #020617; /* Slate-950 fallback */
+}
+
+/* Elegant custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+

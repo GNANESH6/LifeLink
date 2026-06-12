@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <!-- Blood Drop Gradient -->
+    <linearGradient id="dropGrad" x1="30%" y1="10%" x2="70%" y2="90%">
+      <stop offset="0%" stop-color="#ff3b30" />
+      <stop offset="60%" stop-color="#e01e1e" />
+      <stop offset="100%" stop-color="#990000" />
+    </linearGradient>
+    
+    <!-- Glossy Highlight Gradient -->
+    <linearGradient id="glossGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Sneaker/Base Shadow -->
+    <radialGradient id="shadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Shadow -->
+  <ellipse cx="100" cy="180" rx="60" ry="10" fill="url(#shadowGrad)" />
+
+  <!-- Arms Background (Left Arm relaxed on hips) -->
+  <path d="M 68 125 C 48 125, 45 138, 55 140" fill="none" stroke="#222" stroke-width="6" stroke-linecap="round" />
+  <circle cx="55" cy="140" r="9" fill="#ffffff" stroke="#222" stroke-width="3" />
+
+  <!-- Right Arm (Cheerfully waving high) -->
+  <path d="M 136 115 C 160 100, 172 80, 164 70" fill="none" stroke="#222" stroke-width="6" stroke-linecap="round" />
+  <!-- Wave Hand Glove -->
+  <circle cx="164" cy="70" r="10" fill="#ffffff" stroke="#222" stroke-width="3" />
+  <!-- Waving Fingers -->
+  <path d="M 158 63 L 154 55" stroke="#222" stroke-width="3" stroke-linecap="round" />
+  <path d="M 164 60 L 164 50" stroke="#222" stroke-width="3" stroke-linecap="round" />
+  <path d="M 170 63 L 174 55" stroke="#222" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Legs -->
+  <path d="M 80 155 L 80 175" stroke="#222" stroke-width="8" stroke-linecap="round" />
+  <path d="M 120 155 L 120 175" stroke="#222" stroke-width="8" stroke-linecap="round" />
+
+  <!-- Sneakers -->
+  <!-- Left Sneaker -->
+  <path d="M 60 175 C 60 166, 90 166, 90 175 C 90 181, 75 183, 60 180 Z" fill="#ff3b30" stroke="#222" stroke-width="3.5" />
+  <ellipse cx="75" cy="179" rx="12" ry="3" fill="#ffffff" />
+  <path d="M 58 178 L 92 178" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" />
+
+  <!-- Right Sneaker -->
+  <path d="M 110 175 C 110 166, 140 166, 140 175 C 140 181, 125 183, 110 180 Z" fill="#ff3b30" stroke="#222" stroke-width="3.5" />
+  <ellipse cx="125" cy="179" rx="12" ry="3" fill="#ffffff" />
+  <path d="M 108 178 L 142 178" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" />
+
+  <!-- Main Blood Drop Body -->
+  <path d="M 100 20 C 100 20, 165 95, 165 130 C 165 165, 135 170, 100 170 C 65 170, 35 165, 35 130 C 35 95, 100 20, 100 20 Z" fill="url(#dropGrad)" stroke="#222" stroke-width="4.5" stroke-linejoin="round" />
+
+  <!-- Glossy Highlight -->
+  <path d="M 100 32 C 100 32, 145 92, 145 120 C 145 128, 140 132, 135 125 C 125 110, 100 45, 100 32 Z" fill="url(#glossGrad)" />
+  <ellipse cx="70" cy="110" rx="8" ry="18" fill="#ffffff" opacity="0.18" transform="rotate(-15, 70, 110)" />
+
+  <!-- Face -->
+  <!-- Left Eye -->
+  <ellipse cx="80" cy="112" rx="11" ry="16" fill="#ffffff" stroke="#222" stroke-width="3.5" />
+  <ellipse cx="82" cy="110" rx="5" ry="8" fill="#000000" />
+  <circle cx="80" cy="106" r="2.5" fill="#ffffff" /> <!-- Pupil shine -->
+  
+  <!-- Right Eye -->
+  <ellipse cx="120" cy="112" rx="11" ry="16" fill="#ffffff" stroke="#222" stroke-width="3.5" />
+  <ellipse cx="118" cy="110" rx="5" ry="8" fill="#000000" />
+  <circle cx="116" cy="106" r="2.5" fill="#ffffff" /> <!-- Pupil shine -->
+
+  <!-- Eyebrows -->
+  <path d="M 68 93 Q 80 90 88 97" fill="none" stroke="#222" stroke-width="3.5" stroke-linecap="round" />
+  <path d="M 132 93 Q 120 90 112 97" fill="none" stroke="#222" stroke-width="3.5" stroke-linecap="round" />
+
+  <!-- Smile with Tongue out -->
+  <path d="M 72 130 C 72 130, 92 154, 118 135 M 118 135 C 122 130, 126 130, 128 132" fill="none" stroke="#222" stroke-width="4" stroke-linecap="round" />
+  <!-- Cute small tongue out on side -->
+  <path d="M 95 138 C 96 148, 108 146, 109 138 Z" fill="#ff7b7b" stroke="#222" stroke-width="3" />
+  <!-- Cheek Blush -->
+  <ellipse cx="64" cy="125" rx="6" ry="4" fill="#ff8080" opacity="0.6" />
+  <ellipse cx="136" cy="125" rx="6" ry="4" fill="#ff8080" opacity="0.6" />
+</svg>
