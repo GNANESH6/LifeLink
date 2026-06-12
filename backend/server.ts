@@ -20,7 +20,7 @@ import emergencyRoutes from "./src/routes/emergency.routes.js";
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = process.env.PORT || 5000;
 
   // Standard middleware configuration
   app.use(cors({
@@ -51,11 +51,8 @@ async function startServer() {
     res.sendFile(path.join(distPath, "index.html"));
   });
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`===============================================`);
-    console.log(`LifeLink Backend Server Running On Port ${PORT}`);
-    console.log(`http://0.0.0.0:${PORT}`);
-    console.log(`===============================================`);
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
   });
 }
 
