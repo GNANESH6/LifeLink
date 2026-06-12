@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",
+    "build": "esbuild server.ts --bundle --platform=node --target=node18 --outfile=dist/server.cjs --format=cjs",
     "start": "node dist/server.cjs"
   },
   "dependencies": {
