@@ -1,4 +1,4 @@
-# LifeLink
+# LifeLink 🩸
 
 LifeLink is a full-stack, modern web application designed to connect blood donors with individuals in urgent need. Built using the MERN stack (MongoDB, Express, React, Node.js), LifeLink features a clean, responsive UI and robust backend services to ensure seamless matching through geospatial filtering and real-time emergency requests.
 
